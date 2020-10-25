@@ -17,6 +17,7 @@ public class IndexController {
 
     @Autowired
     private TextService textService;
+
     @Autowired
     private DtoService dtoService;
 
