@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Text analyzer</title>
+    </head>
+
+<!--    <script src="../js/lib/angular.min.js"></script>-->
+<!--    <script src="../js/app/app.js"></script>-->
+<!--    <script src="../js/app/MainController.js"></script>-->
+<!--    <script src="../js/app/TextService.js"></script>-->
+<!--    <link rel="stylesheet" href="../css/app.css"/>-->
+
+    <!--webpack-->
+    <script src="index.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <body ng-app="demo" class="bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand  mb-0 h1" href="index.html">Text analyzer</a>
+        </nav>
+        <hr/>
+        <div ng-controller="controller">
+            <div class="container jumbotron">
+                <form ng-submit="submit()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <textarea ng-model="form.text" class="form-control" id="inputFirstName" placeholder="Input your text" rows="4" required></textarea>
+                        </div>
+                    </div>
+                    <button class="btn btn-lg btn-outline-info" type="submit">Submit</button>
+                </form>
+            </div>
+
+            <div ng-if="uniqueWords" class="container jumbotron">
+                <h1 class="form-signin-heading">Unique words: {{uniqueWords.length}}</h1>
+                <div class="{{uniqueWords.length > 4 && 'scroll' || ' ' }}" data-spy="scroll" data-offset="0">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Word</th>
+                            <th class="text-center">Duplicates</th>
+                        </tr>
+                        <tr ng-repeat="word in uniqueWords | orderBy:'-value'">
+                            <td class="text-center">{{ word.value }}</td>
+                            <td class="text-center">{{ word.duplicates}}</td>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer left-footer">
+            <p>© Davidiuk 2020</p>
+        </div>
+    </body>
+</html>
