@@ -31,7 +31,7 @@ public class IndexController {
     }
 
     @GetMapping("/text/{id}")
-    public TextDto findUniqueWords(@PathVariable("id") long id){
+    public TextDto getTextById(@PathVariable("id") long id){
 
         return dtoService.convertTextToDto(textService.getTextById(id)
                 .orElseThrow(() -> new RuntimeException("Text with such id doesn't exist")));
