@@ -3,11 +3,11 @@ package com.text.analyzer.model.dto;
 public class WordDto {
 
     private String value;
-    private int duplicates;
+    private int quantity;
 
-    public WordDto(String value, int duplicates) {
+    public WordDto(String value, int quantity) {
         this.value = value;
-        this.duplicates = duplicates;
+        this.quantity = quantity;
     }
 
     public WordDto() { }
@@ -16,15 +16,15 @@ public class WordDto {
         return value;
     }
 
-    public int getDuplicates() {
-        return duplicates;
+    public int getQuantity() {
+        return quantity;
     }
 
     public void setValue(String value) {
         this.value = value;
     }
 
-    public void setDuplicates(int duplicates) {
-        this.duplicates = duplicates;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

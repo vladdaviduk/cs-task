@@ -10,15 +10,15 @@ public class Word {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String value;
-    private int duplicates;
+    private int quantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "text_id", nullable = false)
     private Text text;
 
-    public Word(String value, int duplicates, Text text) {
+    public Word(String value, int quantity, Text text) {
         this.value = value;
-        this.duplicates = duplicates;
+        this.quantity = quantity;
         this.text = text;
     }
 
@@ -32,8 +32,8 @@ public class Word {
         return value;
     }
 
-    public int getDuplicates() {
-        return duplicates;
+    public int getQuantity() {
+        return quantity;
     }
 
     public Text getText() {
@@ -48,8 +48,8 @@ public class Word {
         this.value = value;
     }
 
-    public void setDuplicates(int duplicates) {
-        this.duplicates = duplicates;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public void setText(Text text) {

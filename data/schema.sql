@@ -10,7 +10,7 @@ create table if not exists word (
     id int not null auto_increment,
     text_id int not null,
     value varchar(255) not null,
-    duplicates int not null,
+    quantity int not null,
     primary key (id),
     foreign key (text_id) REFERENCES text(id)
 );

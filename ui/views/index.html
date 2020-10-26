@@ -40,11 +40,11 @@
                         <thead>
                         <tr>
                             <th class="text-center">Word</th>
-                            <th class="text-center">Duplicates</th>
+                            <th class="text-center">Quantity</th>
                         </tr>
                         <tr ng-repeat="word in uniqueWords | orderBy:'-value'">
                             <td class="text-center">{{ word.value }}</td>
-                            <td class="text-center">{{ word.duplicates}}</td>
+                            <td class="text-center">{{ word.quantity}}</td>
                         </tr>
                         </thead>
                     </table>

@@ -41,7 +41,7 @@ public class TextServiceImpl implements TextService {
 
     private List<String> retrieveAllWords(String input){
         String space = " ";
-        return Arrays.asList(input.replaceAll("[^A-Za-zА-Яа-я\\s]", space)
+        return Arrays.asList(input.replaceAll("[^A-Za-zА-Яа-я\\s]", "")
                 .replaceAll("[\\n]", space)
                 .replaceAll("[\\r]", space)
                 .replaceAll(" +", space)

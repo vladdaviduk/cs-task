@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class DtoService {
 
     public List<WordDto> convertWordsToDto(List<Word> words){
-        return words.stream().map(word -> new WordDto(word.getValue(), word.getDuplicates())).collect(Collectors.toList());
+        return words.stream().map(word -> new WordDto(word.getValue(), word.getQuantity())).collect(Collectors.toList());
     }
 
     public TextDto convertTextToDto(Text text) {
